@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UtilsMapper">
+
+
+	<select id="select" parameterType="hashmap" resultType="hashmap" flushCache="false">
+		${sql}
+	</select>
+		
+	<insert id="insert" parameterType="hashmap" flushCache="true" useGeneratedKeys="true" keyProperty="ID">
+		${sql}
+	</insert>
+	
+	<update id="update" parameterType="hashmap" flushCache="false">
+		${sql}
+	</update>
+	
+	<delete id="delete" parameterType="hashmap" flushCache="false">
+		${sql}
+	</delete>
+	
+	<!-- （调用存储过程）-->
+	<update id="exeProcedure" statementType="CALLABLE" parameterType="hashMap" flushCache="true">
+		${sql}
+	</update>
+</mapper>
